@@ -1,5 +1,3 @@
-from email.mime import image
-from platform import win32_edition
 import cv2
 import os
 import numpy as np
@@ -26,11 +24,11 @@ for i in range(frame_count):
         height = canny.shape[0]
         width = canny.shape[1]
         center = (int(width/2),int(height/2))
-
-        angle = 180.0
+ 
+        angle = 180
         scale = 1.0
         trans = cv2.getRotationMatrix2D(center,angle,scale)
-        image2 = cv2.warpAffine(canny,trans,(width,height))
+        image2 = cv2.warpAffine(frame,trans,(width,height))
         
 
         previous_frame.append(image2)
