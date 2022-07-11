@@ -25,7 +25,7 @@ for i in range(frame_count):
         width = canny.shape[1]
         center = (int(width/2),int(height/2))
  
-        angle = 180
+        angle = 0
         scale = 1.0
         trans = cv2.getRotationMatrix2D(center,angle,scale)
         image2 = cv2.warpAffine(frame,trans,(width,height))
